@@ -1,7 +1,8 @@
-class Category < ActiveRecord::Base
-  has_many :photos
-  has_many :articles
+class Article < ActiveRecord::Base
+
+  belongs_to :category
 
   scope :active, where('active = ?', true)
   scope :alphabetical, order('name')
+
 end
